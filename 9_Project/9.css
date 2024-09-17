@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background : linear-gradient(#0a2a4d,#0056b3,#007bff, #ddd);
+    height: 100vh;
+}/* this is for the body of the page */
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}/*this designs the photos we upload to look horizontally with equal gap of 20px and wraps the image when the screen is smaller.*/
+
+.gallery-item {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}/*this is for the size of the image and the transition effect when hovered over the image*/
+
+.gallery-item:hover {
+    transform: scale(1.1);
+}/*it scales the image to 1.1 when touched by cursor over the image*/
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(242, 238, 238, 0.9);
+}/*this is for the lightbox that appears when the image is clicked*/
+
+.lightbox-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+.lightbox-slide {
+    display: none;
+    width: 80%;
+    height: 100%
+}/*this is for the size of the lightbox that appears when the image is clicked*/
+
+.lightbox-slide img {
+    width: 90%;
+    height: 100%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: rgb(88, 45, 45);
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}/*this is for the close button that appears on the lightbox*/
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -60px;
+    color: rgb(43, 11, 11);
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+}/*this is for the previous and next button that appears on the lightbox*/
+
+.next {
+    right: 10px;
+}
+
+.prev {
+    left: 10px;
+}
